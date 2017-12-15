@@ -1,0 +1,3462 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SqlServer kch-sql-bi-01 DataBRef",
+        "connectionString": "Provider=SQLNCLI11;Data Source=kch-sql-bi-01;Initial Catalog=DataBRef;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateServiceAccount",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      },
+      {
+        "name": "SqlServer kch-sql-bi-dev PBIReportServer",
+        "connectionString": "Provider=SQLNCLI11;Data Source=kch-sql-bi-dev;Initial Catalog=PBIReportServer;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateServiceAccount",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      },
+      {
+        "name": "SqlServer kch-sql-powerbi PBIRS",
+        "connectionString": "Provider=SQLNCLI11;Data Source=kch-sql-powerbi;Initial Catalog=PBIRS;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateServiceAccount",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "D_Catalog",
+        "columns": [
+          {
+            "name": "CatalogID",
+            "dataType": "int64",
+            "sourceColumn": "CatalogID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CatalogName",
+            "dataType": "string",
+            "sourceColumn": "CatalogName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CatalogDescription",
+            "dataType": "string",
+            "sourceColumn": "CatalogDescription",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CatalogDateModified",
+            "dataType": "dateTime",
+            "sourceColumn": "CatalogDateModified",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "DatabaseID",
+            "dataType": "string",
+            "sourceColumn": "DatabaseID",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CatalogRoles",
+            "dataType": "string",
+            "sourceColumn": "CatalogRoles"
+          },
+          {
+            "name": "CatalogType",
+            "dataType": "string",
+            "sourceColumn": "CatalogType"
+          },
+          {
+            "name": "Version",
+            "dataType": "int64",
+            "sourceColumn": "Version"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_Catalog",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [LOG].[D_Catalog].[CatalogID],[LOG].[D_Catalog].[CatalogName],[LOG].[D_Catalog].[CatalogDescription],[LOG].[D_Catalog].[CatalogRoles],[LOG].[D_Catalog].[CatalogDateModified],[LOG].[D_Catalog].[DatabaseID],[LOG].[D_Catalog].[CatalogType],[LOG].[D_Catalog].[Version] FROM [LOG].[D_Catalog]  WHERE (([CatalogID] = 3) OR ([CatalogID] = 4) OR ([CatalogID] = 5) OR ([CatalogID] = 7) OR ([CatalogID] = 8) OR ([CatalogID] = 9)) ",
+              "dataSource": "SqlServer kch-sql-bi-01 DataBRef"
+            },
+            "annotations": [
+              {
+                "name": "TableWidgetSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+                  "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
+                  "  <ColumnSuggestedType />",
+                  "  <ColumnFormat />",
+                  "  <ColumnAccuracy />",
+                  "  <ColumnCurrencySymbol />",
+                  "  <ColumnPositivePattern />",
+                  "  <ColumnNegativePattern />",
+                  "  <ColumnWidths>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CatalogID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>146</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CatalogName</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>209</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CatalogDescription</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>149</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CatalogType</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>91</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CatalogDateModified</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>159</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>DatabaseID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>106</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CatalogRoles</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>93</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Version</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>65</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>RefDate</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>129</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnWidths>",
+                  "  <ColumnDisplayIndex>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CatalogID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>0</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CatalogName</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>1</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CatalogDescription</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>2</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CatalogType</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>6</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CatalogDateModified</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>3</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>DatabaseID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>4</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CatalogRoles</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>5</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Version</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>7</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>RefDate</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>8</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnDisplayIndex>",
+                  "  <ColumnFrozen />",
+                  "  <ColumnChecked>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CatalogRoles</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CatalogType</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Version</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>RefDate</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>false</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnChecked>",
+                  "  <ColumnFilter>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CatalogID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <FilterExpression xsi:nil=\"true\" />",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnFilter>",
+                  "  <SelectionFilter>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CatalogID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <SelectionFilter>",
+                  "          <SelectionType>Select</SelectionType>",
+                  "          <Items>",
+                  "            <anyType xsi:type=\"xsd:int\">3</anyType>",
+                  "            <anyType xsi:type=\"xsd:int\">4</anyType>",
+                  "            <anyType xsi:type=\"xsd:int\">5</anyType>",
+                  "            <anyType xsi:type=\"xsd:int\">7</anyType>",
+                  "            <anyType xsi:type=\"xsd:int\">8</anyType>",
+                  "            <anyType xsi:type=\"xsd:int\">9</anyType>",
+                  "          </Items>",
+                  "        </SelectionFilter>",
+                  "      </value>",
+                  "    </item>",
+                  "  </SelectionFilter>",
+                  "  <FilterParameters>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CatalogID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <CommandParameters />",
+                  "      </value>",
+                  "    </item>",
+                  "  </FilterParameters>",
+                  "  <IsSortDescending>false</IsSortDescending>",
+                  "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [LOG].[D_Catalog].[CatalogID],[LOG].[D_Catalog].[CatalogName],[LOG].[D_Catalog].[CatalogDescription],[LOG].[D_Catalog].[CatalogRoles],[LOG].[D_Catalog].[CatalogDateModified],[LOG].[D_Catalog].[DatabaseID],[LOG].[D_Catalog].[CatalogType],[LOG].[D_Catalog].[Version] FROM [LOG].[D_Catalog]  WHERE (([CatalogID] = 3) OR ([CatalogID] = 4) OR ([CatalogID] = 5) OR ([CatalogID] = 7) OR ([CatalogID] = 8) OR ([CatalogID] = 9)) "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "D_Catalog"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "LOG"
+          },
+          {
+            "name": "TableWidgetSerialization",
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+              "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
+              "  <ColumnSuggestedType />",
+              "  <ColumnFormat />",
+              "  <ColumnAccuracy />",
+              "  <ColumnCurrencySymbol />",
+              "  <ColumnPositivePattern />",
+              "  <ColumnNegativePattern />",
+              "  <ColumnWidths>",
+              "    <item>",
+              "      <key>",
+              "        <string>CatalogID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>146</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CatalogName</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>209</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CatalogDescription</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>149</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CatalogType</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>91</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CatalogDateModified</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>159</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>DatabaseID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>106</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CatalogRoles</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>93</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Version</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>65</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>RefDate</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>129</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnWidths>",
+              "  <ColumnDisplayIndex>",
+              "    <item>",
+              "      <key>",
+              "        <string>CatalogID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>0</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CatalogName</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>1</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CatalogDescription</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>2</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CatalogType</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>6</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CatalogDateModified</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>3</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>DatabaseID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>4</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CatalogRoles</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>5</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Version</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>7</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>RefDate</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>8</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnDisplayIndex>",
+              "  <ColumnFrozen />",
+              "  <ColumnChecked>",
+              "    <item>",
+              "      <key>",
+              "        <string>CatalogRoles</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CatalogType</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Version</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>RefDate</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>false</boolean>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnChecked>",
+              "  <ColumnFilter>",
+              "    <item>",
+              "      <key>",
+              "        <string>CatalogID</string>",
+              "      </key>",
+              "      <value>",
+              "        <FilterExpression xsi:nil=\"true\" />",
+              "      </value>",
+              "    </item>",
+              "  </ColumnFilter>",
+              "  <SelectionFilter>",
+              "    <item>",
+              "      <key>",
+              "        <string>CatalogID</string>",
+              "      </key>",
+              "      <value>",
+              "        <SelectionFilter>",
+              "          <SelectionType>Select</SelectionType>",
+              "          <Items>",
+              "            <anyType xsi:type=\"xsd:int\">3</anyType>",
+              "            <anyType xsi:type=\"xsd:int\">4</anyType>",
+              "            <anyType xsi:type=\"xsd:int\">5</anyType>",
+              "            <anyType xsi:type=\"xsd:int\">7</anyType>",
+              "            <anyType xsi:type=\"xsd:int\">8</anyType>",
+              "            <anyType xsi:type=\"xsd:int\">9</anyType>",
+              "          </Items>",
+              "        </SelectionFilter>",
+              "      </value>",
+              "    </item>",
+              "  </SelectionFilter>",
+              "  <FilterParameters>",
+              "    <item>",
+              "      <key>",
+              "        <string>CatalogID</string>",
+              "      </key>",
+              "      <value>",
+              "        <CommandParameters />",
+              "      </value>",
+              "    </item>",
+              "  </FilterParameters>",
+              "  <IsSortDescending>false</IsSortDescending>",
+              "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "D_Column",
+        "columns": [
+          {
+            "name": "ColumnID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "ColumnID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "TableID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "TableID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "ExplicitName",
+            "dataType": "string",
+            "sourceColumn": "ExplicitName",
+            "sourceProviderType": "WChar",
+            "displayFolder": "Column"
+          },
+          {
+            "name": "ColumnDescription",
+            "dataType": "string",
+            "sourceColumn": "ColumnDescription",
+            "sourceProviderType": "WChar",
+            "displayFolder": "Column"
+          },
+          {
+            "name": "IsHidden",
+            "dataType": "boolean",
+            "sourceColumn": "IsHidden",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "Boolean",
+            "displayFolder": "Column"
+          },
+          {
+            "name": "IsKey",
+            "dataType": "boolean",
+            "sourceColumn": "IsKey",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "Boolean",
+            "displayFolder": "Column"
+          },
+          {
+            "name": "ColumnStorageID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "ColumnStorageID",
+            "sourceProviderType": "Numeric",
+            "displayFolder": "Column"
+          },
+          {
+            "name": "SourceColumn",
+            "dataType": "string",
+            "sourceColumn": "SourceColumn",
+            "sourceProviderType": "WChar",
+            "displayFolder": "Column"
+          },
+          {
+            "name": "Expression",
+            "dataType": "string",
+            "sourceColumn": "Expression",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "FormatString",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "FormatString",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ColumnModifiedTime",
+            "dataType": "dateTime",
+            "sourceColumn": "ColumnModifiedTime",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp",
+            "displayFolder": "Column\\Date"
+          },
+          {
+            "name": "StructureModifiedTime",
+            "dataType": "dateTime",
+            "sourceColumn": "StructureModifiedTime",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp",
+            "displayFolder": "Column\\Date"
+          },
+          {
+            "name": "DisplayFolder",
+            "dataType": "string",
+            "sourceColumn": "DisplayFolder",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CatalogID",
+            "dataType": "int64",
+            "sourceColumn": "CatalogID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Calculated_Column",
+            "dataType": "string",
+            "sourceColumn": "Calculated_Column",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Statistics_RowCount",
+            "dataType": "double",
+            "sourceColumn": "Statistics_RowCount",
+            "sourceProviderType": "Numeric"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_Column",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [LOG].[D_Column].* FROM [LOG].[D_Column] ",
+              "dataSource": "SqlServer kch-sql-bi-01 DataBRef"
+            },
+            "annotations": [
+              {
+                "name": "TableWidgetSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+                  "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
+                  "  <ColumnSuggestedType />",
+                  "  <ColumnFormat />",
+                  "  <ColumnAccuracy />",
+                  "  <ColumnCurrencySymbol />",
+                  "  <ColumnPositivePattern />",
+                  "  <ColumnNegativePattern />",
+                  "  <ColumnWidths>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ColumnID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>76</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>TableID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>67</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ExplicitName</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>90</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ColumnDescription</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>118</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>IsHidden</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>72</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>IsKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>57</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ColumnStorageID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>114</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>SourceColumn</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>98</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Expression</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>82</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>FormatString</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>92</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ColumnModifiedTime</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>127</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>StructureModifiedTime</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>137</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>DisplayFolder</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>94</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CatalogID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>78</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Calculated_Column</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>121</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Statistics_RowCount</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>129</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnWidths>",
+                  "  <ColumnDisplayIndex>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ColumnID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>0</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>TableID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>1</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ExplicitName</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>2</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ColumnDescription</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>3</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>IsHidden</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>4</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>IsKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>5</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ColumnStorageID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>6</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>SourceColumn</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>7</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Expression</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>8</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>FormatString</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>9</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ColumnModifiedTime</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>10</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>StructureModifiedTime</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>11</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>DisplayFolder</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>12</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CatalogID</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>13</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Calculated_Column</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>14</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Statistics_RowCount</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>15</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnDisplayIndex>",
+                  "  <ColumnFrozen />",
+                  "  <ColumnChecked />",
+                  "  <ColumnFilter />",
+                  "  <SelectionFilter />",
+                  "  <FilterParameters />",
+                  "  <IsSortDescending>false</IsSortDescending>",
+                  "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [LOG].[D_Column].* FROM [LOG].[D_Column] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "D_Column"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "LOG"
+          },
+          {
+            "name": "TableWidgetSerialization",
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+              "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
+              "  <ColumnSuggestedType />",
+              "  <ColumnFormat />",
+              "  <ColumnAccuracy />",
+              "  <ColumnCurrencySymbol />",
+              "  <ColumnPositivePattern />",
+              "  <ColumnNegativePattern />",
+              "  <ColumnWidths>",
+              "    <item>",
+              "      <key>",
+              "        <string>ColumnID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>76</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>TableID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>67</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ExplicitName</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>90</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ColumnDescription</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>118</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>IsHidden</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>72</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>IsKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>57</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ColumnStorageID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>114</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>SourceColumn</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>98</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Expression</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>82</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>FormatString</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>92</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ColumnModifiedTime</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>127</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>StructureModifiedTime</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>137</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>DisplayFolder</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>94</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CatalogID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>78</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Calculated_Column</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>121</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Statistics_RowCount</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>129</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnWidths>",
+              "  <ColumnDisplayIndex>",
+              "    <item>",
+              "      <key>",
+              "        <string>ColumnID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>0</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>TableID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>1</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ExplicitName</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>2</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ColumnDescription</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>3</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>IsHidden</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>4</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>IsKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>5</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ColumnStorageID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>6</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>SourceColumn</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>7</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Expression</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>8</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>FormatString</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>9</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ColumnModifiedTime</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>10</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>StructureModifiedTime</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>11</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>DisplayFolder</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>12</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CatalogID</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>13</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Calculated_Column</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>14</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Statistics_RowCount</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>15</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnDisplayIndex>",
+              "  <ColumnFrozen />",
+              "  <ColumnChecked />",
+              "  <ColumnFilter />",
+              "  <SelectionFilter />",
+              "  <FilterParameters />",
+              "  <IsSortDescending>false</IsSortDescending>",
+              "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "D_Hierarchy",
+        "columns": [
+          {
+            "name": "HierarchyName",
+            "dataType": "string",
+            "sourceColumn": "HierarchyName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TableID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "TableID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "HierarchyDescription",
+            "dataType": "string",
+            "sourceColumn": "HierarchyDescription",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "HierarchyModifiedTime",
+            "dataType": "dateTime",
+            "sourceColumn": "HierarchyModifiedTime",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp",
+            "displayFolder": "Date"
+          },
+          {
+            "name": "StructureModifiedTime",
+            "dataType": "dateTime",
+            "sourceColumn": "StructureModifiedTime",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp",
+            "displayFolder": "Date"
+          },
+          {
+            "name": "CatalogID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CatalogID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "ID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "ModifiedTime",
+            "dataType": "dateTime",
+            "sourceColumn": "ModifiedTime",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "Catalog_Name",
+            "dataType": "string",
+            "sourceColumn": "Catalog_Name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ColumnID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "ColumnID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "HierarchyLevelID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "HierarchyLevelID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Ordinal",
+            "dataType": "int64",
+            "sourceColumn": "Ordinal",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "HierarchyLevalName",
+            "dataType": "string",
+            "sourceColumn": "HierarchyLevalName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TableCatID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "TableCatID",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_Hierarchy",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [LOG].[D_Hierarchy].* FROM [LOG].[D_Hierarchy] ",
+              "dataSource": "SqlServer kch-sql-bi-01 DataBRef"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [LOG].[D_Hierarchy].* FROM [LOG].[D_Hierarchy] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "D_Hierarchy"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "LOG"
+          }
+        ]
+      },
+      {
+        "name": "D_Measure",
+        "columns": [
+          {
+            "name": "CatalogID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CatalogID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "MeasureID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "MeasureID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "TableID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "TableID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "MeasureName",
+            "dataType": "string",
+            "sourceColumn": "MeasureName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "MeasureDescription",
+            "dataType": "string",
+            "sourceColumn": "MeasureDescription",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DataType",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DataType",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "MeasureExpression",
+            "dataType": "string",
+            "sourceColumn": "MeasureExpression",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Is_Hidden",
+            "dataType": "string",
+            "sourceColumn": "Is_Hidden",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "MeasureModifiedTime",
+            "dataType": "dateTime",
+            "sourceColumn": "MeasureModifiedTime",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "StructureModifiedTime",
+            "dataType": "dateTime",
+            "sourceColumn": "StructureModifiedTime",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "Is_SimpleMeasure",
+            "dataType": "string",
+            "sourceColumn": "Is_SimpleMeasure",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DisplayFolder",
+            "dataType": "string",
+            "sourceColumn": "DisplayFolder",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_Measure",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [LOG].[D_Measure].* FROM [LOG].[D_Measure] ",
+              "dataSource": "SqlServer kch-sql-bi-01 DataBRef"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [LOG].[D_Measure].* FROM [LOG].[D_Measure] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "D_Measure"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "LOG"
+          }
+        ]
+      },
+      {
+        "name": "D_Relationship",
+        "columns": [
+          {
+            "name": "CatalogID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CatalogID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "RelationshipType",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "RelationshipType",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "FromTableID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "FromTableID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "FromColumnID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "FromColumnID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "ToTableID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "ToTableID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "ToColumnID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "ToColumnID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "RelationshipModifiedTime",
+            "dataType": "dateTime",
+            "sourceColumn": "RelationshipModifiedTime",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "ID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "ID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "RelationshipIs_Active",
+            "dataType": "string",
+            "sourceColumn": "RelationshipIs_Active",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CrossFiltering_Behaviour",
+            "dataType": "string",
+            "sourceColumn": "CrossFiltering_Behaviour",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "From_Cardinality",
+            "dataType": "string",
+            "sourceColumn": "From_Cardinality",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "To_Cardinality",
+            "dataType": "string",
+            "sourceColumn": "To_Cardinality",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "FromColumn",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(D_Column[ExplicitName],D_Column[ColumnID],[FromColumnID])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_Relationship",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [LOG].[D_Relationship].* FROM [LOG].[D_Relationship] ",
+              "dataSource": "SqlServer kch-sql-bi-01 DataBRef"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [LOG].[D_Relationship].* FROM [LOG].[D_Relationship] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "D_Relationship"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "LOG"
+          }
+        ]
+      },
+      {
+        "name": "D_Role",
+        "columns": [
+          {
+            "name": "RoleID",
+            "dataType": "double",
+            "sourceColumn": "RoleID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Role",
+            "dataType": "string",
+            "sourceColumn": "Role",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "RoleDescription",
+            "dataType": "string",
+            "sourceColumn": "RoleDescription",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ModelPermission",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ModelPermission",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "RoleModifiedTime",
+            "dataType": "dateTime",
+            "sourceColumn": "RoleModifiedTime",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "CatalogID",
+            "dataType": "int64",
+            "sourceColumn": "CatalogID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PermissionDescription",
+            "dataType": "string",
+            "sourceColumn": "PermissionDescription",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_Role",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [LOG].[D_Role].* FROM [LOG].[D_Role] ",
+              "dataSource": "SqlServer kch-sql-bi-01 DataBRef"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [LOG].[D_Role].* FROM [LOG].[D_Role] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "D_Role"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "LOG"
+          }
+        ]
+      },
+      {
+        "name": "D_RoleMembership",
+        "columns": [
+          {
+            "name": "RoleMembershipsID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "RoleMembershipsID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "RoleID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "RoleID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "MemberName",
+            "dataType": "string",
+            "sourceColumn": "MemberName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "RoleModifiedTime",
+            "dataType": "dateTime",
+            "sourceColumn": "RoleModifiedTime",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "CatalogID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CatalogID",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_RoleMembership",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [LOG].[D_RoleMembership].* FROM [LOG].[D_RoleMembership] ",
+              "dataSource": "SqlServer kch-sql-bi-01 DataBRef"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [LOG].[D_RoleMembership].* FROM [LOG].[D_RoleMembership] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "D_RoleMembership"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "LOG"
+          }
+        ]
+      },
+      {
+        "name": "D_Table",
+        "columns": [
+          {
+            "name": "CatalogID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CatalogID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "TableName",
+            "dataType": "string",
+            "sourceColumn": "TableName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DataCategory",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "DataCategory",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TableDescription",
+            "dataType": "string",
+            "sourceColumn": "TableDescription",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "IsHidden",
+            "dataType": "string",
+            "sourceColumn": "IsHidden",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TableCatID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "TableCatID",
+            "sourceProviderType": "Numeric"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_Table",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [LOG].[D_Table].* FROM [LOG].[D_Table] ",
+              "dataSource": "SqlServer kch-sql-bi-01 DataBRef"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [LOG].[D_Table].* FROM [LOG].[D_Table] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "D_Table"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "LOG"
+          }
+        ]
+      },
+      {
+        "name": "D_TablePermission",
+        "columns": [
+          {
+            "name": "ID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "ID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "ROLEID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "ROLEID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "TableID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "TableID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "FilterExpression",
+            "dataType": "string",
+            "sourceColumn": "FilterExpression",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PermissionModifiedTime",
+            "dataType": "dateTime",
+            "sourceColumn": "PermissionModifiedTime",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "CatalogID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CatalogID",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_TablePermission",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [LOG].[D_TablePermission].* FROM [LOG].[D_TablePermission] ",
+              "dataSource": "SqlServer kch-sql-bi-01 DataBRef"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [LOG].[D_TablePermission].* FROM [LOG].[D_TablePermission] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "D_TablePermission"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "LOG"
+          }
+        ]
+      },
+      {
+        "name": "D_TableSource",
+        "columns": [
+          {
+            "name": "DataSourceName",
+            "dataType": "string",
+            "sourceColumn": "DataSourceName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DataSourceDescription",
+            "dataType": "string",
+            "sourceColumn": "DataSourceDescription",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ConnectionString",
+            "dataType": "string",
+            "sourceColumn": "ConnectionString",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ConnectionAccount",
+            "dataType": "string",
+            "sourceColumn": "ConnectionAccount",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TableQueryDefination",
+            "dataType": "string",
+            "sourceColumn": "TableQueryDefination",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CatalogID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CatalogID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "ID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "TableID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "TableID",
+            "sourceProviderType": "Numeric"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_TableSource",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [LOG].[D_TableSource].* FROM [LOG].[D_TableSource] ",
+              "dataSource": "SqlServer kch-sql-bi-01 DataBRef"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [LOG].[D_TableSource].* FROM [LOG].[D_TableSource] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "D_TableSource"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "LOG"
+          }
+        ]
+      },
+      {
+        "name": "D_ToColumn",
+        "columns": [
+          {
+            "name": "ToColumnID",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "ToColumnID",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ToTableID",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "ToTableID",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ToStatistics_RowCount",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "ToStatistics_RowCount",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "ToColumnName",
+            "dataType": "string",
+            "sourceColumn": "ToColumnName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ToColumnDescription",
+            "dataType": "string",
+            "sourceColumn": "ToColumnDescription",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "IsHidden",
+            "dataType": "string",
+            "sourceColumn": "IsHidden",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "IsKey",
+            "dataType": "string",
+            "sourceColumn": "IsKey",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ToColumnStorageID",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "ToColumnStorageID",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "ToSourceColumn",
+            "dataType": "string",
+            "sourceColumn": "ToSourceColumn",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ToExpression",
+            "dataType": "string",
+            "sourceColumn": "ToExpression",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ToFormatString",
+            "dataType": "string",
+            "sourceColumn": "ToFormatString",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ToColumnModifiedTime",
+            "dataType": "dateTime",
+            "sourceColumn": "ToColumnModifiedTime",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "ToStructureModifiedTime",
+            "dataType": "dateTime",
+            "sourceColumn": "ToStructureModifiedTime",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "ToColDisplayFolder",
+            "dataType": "string",
+            "sourceColumn": "ToColDisplayFolder",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CatalogID",
+            "dataType": "int64",
+            "sourceColumn": "CatalogID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ToCalculated_Column",
+            "dataType": "string",
+            "sourceColumn": "ToCalculated_Column",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_ToColumn",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [LOG].[D_ToColumn].* FROM [LOG].[D_ToColumn] ",
+              "dataSource": "SqlServer kch-sql-bi-01 DataBRef"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [LOG].[D_ToColumn].* FROM [LOG].[D_ToColumn] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "D_ToColumn"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "LOG"
+          }
+        ]
+      },
+      {
+        "name": "D_ToTable",
+        "columns": [
+          {
+            "name": "CategoryID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CategoryID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ToTableName",
+            "dataType": "string",
+            "sourceColumn": "ToTableName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ToTableCategory",
+            "dataType": "string",
+            "sourceColumn": "ToTableCategory",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ToTableDescription",
+            "dataType": "string",
+            "sourceColumn": "ToTableDescription",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ToTable_is_Hidden",
+            "dataType": "string",
+            "sourceColumn": "ToTable_is_Hidden",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ToTableCatID",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "ToTableCatID",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_ToTable",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [LOG].[D_ToTable].* FROM [LOG].[D_ToTable] ",
+              "dataSource": "SqlServer kch-sql-bi-01 DataBRef"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [LOG].[D_ToTable].* FROM [LOG].[D_ToTable] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "D_ToTable"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "LOG"
+          }
+        ]
+      },
+      {
+        "name": "ProdPolicyUserRole",
+        "columns": [
+          {
+            "name": "ID",
+            "dataType": "string",
+            "sourceColumn": "ID",
+            "sourceProviderType": "Guid"
+          },
+          {
+            "name": "RoleID",
+            "dataType": "string",
+            "sourceColumn": "RoleID",
+            "sourceProviderType": "Guid"
+          },
+          {
+            "name": "UserID",
+            "dataType": "string",
+            "sourceColumn": "UserID",
+            "sourceProviderType": "Guid"
+          },
+          {
+            "name": "PolicyID",
+            "dataType": "string",
+            "sourceColumn": "PolicyID",
+            "sourceProviderType": "Guid"
+          },
+          {
+            "name": "ReportServerID",
+            "dataType": "int64",
+            "sourceColumn": "ReportServerID"
+          },
+          {
+            "name": "ReportServerType",
+            "dataType": "string",
+            "sourceColumn": "ReportServerType"
+          },
+          {
+            "type": "calculated",
+            "name": "Username",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(ProdUsers[UserName],ProdUsers[UserID],[UserID])"
+          },
+          {
+            "type": "calculated",
+            "name": "RoleName",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(ProdRoles[RoleName],ProdRoles[RoleID],[RoleID])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "ProdPolicyUserRole",
+            "dataView": "full",
+            "source": {
+              "query": [
+                "SELECT * ",
+                ", 'ReportServerID' =2 , 'ReportServerType' = 'Development'  FROM [kch-sql-bi-dev].[pbireportserver].[dbo].[PolicyUserRole]",
+                "union ",
+                "select * ",
+                ", 'ReportServerID' =1 , 'ReportServerType' = 'Production'  FROM ",
+                "dbo.PolicyUserRole"
+              ],
+              "dataSource": "SqlServer kch-sql-powerbi PBIRS"
+            },
+            "annotations": [
+              {
+                "name": "QueryEditorSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT * ",
+                  ", 'ReportServerID' =2 , 'ReportServerType' = 'Development'  FROM [kch-sql-bi-dev].[pbireportserver].[dbo].[PolicyUserRole]",
+                  "union ",
+                  "select * ",
+                  ", 'ReportServerID' =1 , 'ReportServerType' = 'Production'  FROM ",
+                  "dbo.PolicyUserRole</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": [
+              "SELECT * ",
+              ", 'ReportServerID' =2 , 'ReportServerType' = 'Development'  FROM [kch-sql-bi-dev].[pbireportserver].[dbo].[PolicyUserRole]",
+              "union ",
+              "select * ",
+              ", 'ReportServerID' =1 , 'ReportServerType' = 'Production'  FROM ",
+              "dbo.PolicyUserRole"
+            ]
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PolicyUserRole"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          },
+          {
+            "name": "QueryEditorSerialization",
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT * ",
+              ", 'ReportServerID' =2 , 'ReportServerType' = 'Development'  FROM [kch-sql-bi-dev].[pbireportserver].[dbo].[PolicyUserRole]",
+              "union ",
+              "select * ",
+              ", 'ReportServerID' =1 , 'ReportServerType' = 'Production'  FROM ",
+              "dbo.PolicyUserRole</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "ProdRoles",
+        "columns": [
+          {
+            "name": "RoleID",
+            "dataType": "string",
+            "sourceColumn": "RoleID",
+            "sourceProviderType": "Guid"
+          },
+          {
+            "name": "RoleName",
+            "dataType": "string",
+            "sourceColumn": "RoleName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Description",
+            "dataType": "string",
+            "sourceColumn": "Description",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ReportServerID",
+            "dataType": "int64",
+            "sourceColumn": "ReportServerID"
+          },
+          {
+            "name": "ReportServerType",
+            "dataType": "string",
+            "sourceColumn": "ReportServerType"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "ProdRoles",
+            "dataView": "full",
+            "source": {
+              "query": [
+                "SELECT [RoleID],[RoleName],[Description] , 'ReportServerID' =2 , 'ReportServerType' = 'Development'",
+                "  FROM [KCH-SQL-bi-dev].pbireportserver.dbo.roles",
+                "union ",
+                "select roleid,rolename,description ",
+                ", 'ReportServerID' =1 , 'ReportServerType' = 'Production'  FROM ",
+                "dbo.roles"
+              ],
+              "dataSource": "SqlServer kch-sql-powerbi PBIRS"
+            },
+            "annotations": [
+              {
+                "name": "QueryEditorSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT [RoleID],[RoleName],[Description] , 'ReportServerID' =2 , 'ReportServerType' = 'Development'",
+                  "  FROM [KCH-SQL-bi-dev].pbireportserver.dbo.roles",
+                  "union ",
+                  "select roleid,rolename,description ",
+                  ", 'ReportServerID' =1 , 'ReportServerType' = 'Production'  FROM ",
+                  "dbo.roles</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": [
+              "SELECT [RoleID],[RoleName],[Description] , 'ReportServerID' =2 , 'ReportServerType' = 'Development'",
+              "  FROM [KCH-SQL-bi-dev].pbireportserver.dbo.roles",
+              "union ",
+              "select roleid,rolename,description ",
+              ", 'ReportServerID' =1 , 'ReportServerType' = 'Production'  FROM ",
+              "dbo.roles"
+            ]
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Roles"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          },
+          {
+            "name": "QueryEditorSerialization",
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT [RoleID],[RoleName],[Description] , 'ReportServerID' =2 , 'ReportServerType' = 'Development'",
+              "  FROM [KCH-SQL-bi-dev].pbireportserver.dbo.roles",
+              "union ",
+              "select roleid,rolename,description ",
+              ", 'ReportServerID' =1 , 'ReportServerType' = 'Production'  FROM ",
+              "dbo.roles</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "ProdUsers",
+        "columns": [
+          {
+            "name": "UserID",
+            "dataType": "string",
+            "sourceColumn": "UserID",
+            "sourceProviderType": "Guid"
+          },
+          {
+            "name": "UserName",
+            "dataType": "string",
+            "sourceColumn": "UserName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ModifiedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ModifiedDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "ReportServerID",
+            "dataType": "int64",
+            "sourceColumn": "ReportServerID"
+          },
+          {
+            "name": "ReportServerType",
+            "dataType": "string",
+            "sourceColumn": "ReportServerType"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "ProdUsers",
+            "dataView": "full",
+            "source": {
+              "query": [
+                "SELECT [UserID],[UserName],[ModifiedDate]   ",
+                ",'ReportServerID' = 2 , 'ReportServerType' = 'Development'",
+                "FROM ",
+                "[KCH-SQL-BI-DEV].[PBIReportServer].[dbo].[Users]",
+                "UNION ",
+                "SELECT [UserID],[UserName],[ModifiedDate] ",
+                ", 'ReportServerID' =1 , 'ReportServerType' = 'Production'  FROM ",
+                "[dbo].[Users]"
+              ],
+              "dataSource": "SqlServer kch-sql-powerbi PBIRS"
+            },
+            "annotations": [
+              {
+                "name": "QueryEditorSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT [UserID],[UserName],[ModifiedDate]   ",
+                  ",'ReportServerID' = 2 , 'ReportServerType' = 'Development'",
+                  "FROM ",
+                  "[KCH-SQL-BI-DEV].[PBIReportServer].[dbo].[Users]",
+                  "UNION ",
+                  "SELECT [UserID],[UserName],[ModifiedDate] ",
+                  ", 'ReportServerID' =1 , 'ReportServerType' = 'Production'  FROM ",
+                  "[dbo].[Users]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": [
+              "SELECT [UserID],[UserName],[ModifiedDate]   ",
+              ",'ReportServerID' = 2 , 'ReportServerType' = 'Development'",
+              "FROM ",
+              "[KCH-SQL-BI-DEV].[PBIReportServer].[dbo].[Users]",
+              "UNION ",
+              "SELECT [UserID],[UserName],[ModifiedDate] ",
+              ", 'ReportServerID' =1 , 'ReportServerType' = 'Production'  FROM ",
+              "[dbo].[Users]"
+            ]
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Users"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          },
+          {
+            "name": "QueryEditorSerialization",
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT [UserID],[UserName],[ModifiedDate]   ",
+              ",'ReportServerID' = 2 , 'ReportServerType' = 'Development'",
+              "FROM ",
+              "[KCH-SQL-BI-DEV].[PBIReportServer].[dbo].[Users]",
+              "UNION ",
+              "SELECT [UserID],[UserName],[ModifiedDate] ",
+              ", 'ReportServerID' =1 , 'ReportServerType' = 'Production'  FROM ",
+              "[dbo].[Users]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "ProdCatalog",
+        "columns": [
+          {
+            "name": "CreatedBy",
+            "dataType": "string",
+            "sourceColumn": "CreatedBy",
+            "sourceProviderType": "VarChar"
+          },
+          {
+            "name": "CreationDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CreationDate",
+            "formatString": "General Date",
+            "sourceProviderType": "Date"
+          },
+          {
+            "name": "ModifiedBy",
+            "dataType": "string",
+            "sourceColumn": "ModifiedBy",
+            "sourceProviderType": "VarChar"
+          },
+          {
+            "name": "ModifiedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ModifiedDate",
+            "formatString": "General Date",
+            "sourceProviderType": "Date"
+          },
+          {
+            "name": "ReportName",
+            "dataType": "string",
+            "sourceColumn": "ReportName",
+            "sourceProviderType": "VarChar"
+          },
+          {
+            "name": "IsHidden",
+            "dataType": "string",
+            "sourceColumn": "IsHidden",
+            "sourceProviderType": "VarChar"
+          },
+          {
+            "name": "Path",
+            "dataType": "string",
+            "sourceColumn": "Path",
+            "sourceProviderType": "VarChar"
+          },
+          {
+            "name": "PolicyID",
+            "dataType": "string",
+            "sourceColumn": "PolicyID",
+            "sourceProviderType": "VarChar"
+          },
+          {
+            "name": "ModifiedByID",
+            "dataType": "string",
+            "sourceColumn": "ModifiedByID",
+            "sourceProviderType": "VarChar"
+          },
+          {
+            "name": "Name",
+            "dataType": "string",
+            "sourceColumn": "Name",
+            "sourceProviderType": "VarChar"
+          },
+          {
+            "name": "ReportServerID",
+            "dataType": "int64",
+            "sourceColumn": "ReportServerID"
+          },
+          {
+            "name": "ReportServerType",
+            "dataType": "string",
+            "sourceColumn": "ReportServerType"
+          },
+          {
+            "name": "RecordType",
+            "dataType": "string",
+            "sourceColumn": "RecordType"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "ProdCatalog",
+            "dataView": "full",
+            "source": {
+              "query": [
+                "select usr.UserName as CreatedBy",
+                ",'ReportServerID' = 2",
+                ",'ReportServerType' = 'Development'",
+                ",c.CreationDate",
+                ",u.UserName as ModifiedBy",
+                ",CASE C.Type",
+                "\tWHEN 1 then 'Folder'",
+                "    WHEN 13 then 'Report'",
+                "    WHEN 5 then 'DataSourceDefinition'",
+                "    WHEN 8 then 'SharedDataSet'",
+                "    WHEN 6 then 'Report Model'",
+                "\tWHEN 3 THEN 'System Setting'",
+                "    else CAST (Type as varchar)",
+                "   end as RecordType",
+                "--,c.CreatedByID,c.ModifiedByID",
+                ",c.ModifiedDate",
+                ",c.name as ReportName",
+                ",case when c.Hidden = 0 then 'False' else 'True' end as IsHidden",
+                ",c.Path , c.PolicyID ,c.ModifiedByID",
+                ",c.Name from [kch-sql-bi-dev].[PBIReportServer].dbo.Catalog c",
+                "inner join ",
+                "[kch-sql-bi-dev].[PBIReportServer].dbo.Users u on u.UserID = c.ModifiedByID",
+                "inner join [kch-sql-bi-dev].[PBIReportServer].dbo.Users usr on usr.UserID = c.CreatedByID",
+                "union ",
+                "select usr.UserName as CreatedBy",
+                ",'ReportServerID' = 1",
+                ",'ReportServerType'='Production'",
+                ",c.CreationDate",
+                ",u.UserName as ModifiedBy",
+                ",CASE C.Type",
+                "\tWHEN 1 then 'Folder'",
+                "    WHEN 13 then 'Report'",
+                "    WHEN 5 then 'DataSourceDefinition'",
+                "    WHEN 8 then 'SharedDataSet'",
+                "    WHEN 6 then 'Report Model'",
+                "\tWHEN 3 THEN 'System Setting'",
+                "    else CAST (Type as varchar)",
+                "   end as RecordType",
+                "--,c.CreatedByID,c.ModifiedByID",
+                ",c.ModifiedDate",
+                ",c.name as ReportName",
+                ",case when c.Hidden = 0 then 'False' else 'True' end as IsHidden",
+                ",c.Path , c.PolicyID ,c.ModifiedByID",
+                ",c.Name from [kch-sql-powerbi].[pbirs].dbo.Catalog c",
+                "inner join ",
+                "[kch-sql-powerbi].[pbirs].dbo.Users u on u.UserID = c.ModifiedByID",
+                "inner join [kch-sql-powerbi].[pbirs].dbo.Users usr on usr.UserID = c.CreatedByID"
+              ],
+              "dataSource": "SqlServer kch-sql-powerbi PBIRS"
+            },
+            "annotations": [
+              {
+                "name": "QueryEditorSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>select usr.UserName as CreatedBy",
+                  ",'ReportServerID' = 2",
+                  ",'ReportServerType' = 'Development'",
+                  ",c.CreationDate",
+                  ",u.UserName as ModifiedBy",
+                  ",CASE C.Type",
+                  "\tWHEN 1 then 'Folder'",
+                  "    WHEN 13 then 'Report'",
+                  "    WHEN 5 then 'DataSourceDefinition'",
+                  "    WHEN 8 then 'SharedDataSet'",
+                  "    WHEN 6 then 'Report Model'",
+                  "\tWHEN 3 THEN 'System Setting'",
+                  "    else CAST (Type as varchar)",
+                  "   end as RecordType",
+                  "--,c.CreatedByID,c.ModifiedByID",
+                  ",c.ModifiedDate",
+                  ",c.name as ReportName",
+                  ",case when c.Hidden = 0 then 'False' else 'True' end as IsHidden",
+                  ",c.Path , c.PolicyID ,c.ModifiedByID",
+                  ",c.Name from [kch-sql-bi-dev].[PBIReportServer].dbo.Catalog c",
+                  "inner join ",
+                  "[kch-sql-bi-dev].[PBIReportServer].dbo.Users u on u.UserID = c.ModifiedByID",
+                  "inner join [kch-sql-bi-dev].[PBIReportServer].dbo.Users usr on usr.UserID = c.CreatedByID",
+                  "union ",
+                  "select usr.UserName as CreatedBy",
+                  ",'ReportServerID' = 1",
+                  ",'ReportServerType'='Production'",
+                  ",c.CreationDate",
+                  ",u.UserName as ModifiedBy",
+                  ",CASE C.Type",
+                  "\tWHEN 1 then 'Folder'",
+                  "    WHEN 13 then 'Report'",
+                  "    WHEN 5 then 'DataSourceDefinition'",
+                  "    WHEN 8 then 'SharedDataSet'",
+                  "    WHEN 6 then 'Report Model'",
+                  "\tWHEN 3 THEN 'System Setting'",
+                  "    else CAST (Type as varchar)",
+                  "   end as RecordType",
+                  "--,c.CreatedByID,c.ModifiedByID",
+                  ",c.ModifiedDate",
+                  ",c.name as ReportName",
+                  ",case when c.Hidden = 0 then 'False' else 'True' end as IsHidden",
+                  ",c.Path , c.PolicyID ,c.ModifiedByID",
+                  ",c.Name from [kch-sql-powerbi].[pbirs].dbo.Catalog c",
+                  "inner join ",
+                  "[kch-sql-powerbi].[pbirs].dbo.Users u on u.UserID = c.ModifiedByID",
+                  "inner join [kch-sql-powerbi].[pbirs].dbo.Users usr on usr.UserID = c.CreatedByID</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": [
+              "select usr.UserName as CreatedBy",
+              ",'ReportServerID' = 2",
+              ",'ReportServerType' = 'Development'",
+              ",c.CreationDate",
+              ",u.UserName as ModifiedBy",
+              ",CASE C.Type",
+              "\tWHEN 1 then 'Folder'",
+              "    WHEN 13 then 'Report'",
+              "    WHEN 5 then 'DataSourceDefinition'",
+              "    WHEN 8 then 'SharedDataSet'",
+              "    WHEN 6 then 'Report Model'",
+              "\tWHEN 3 THEN 'System Setting'",
+              "    else CAST (Type as varchar)",
+              "   end as RecordType",
+              "--,c.CreatedByID,c.ModifiedByID",
+              ",c.ModifiedDate",
+              ",c.name as ReportName",
+              ",case when c.Hidden = 0 then 'False' else 'True' end as IsHidden",
+              ",c.Path , c.PolicyID ,c.ModifiedByID",
+              ",c.Name from [kch-sql-bi-dev].[PBIReportServer].dbo.Catalog c",
+              "inner join ",
+              "[kch-sql-bi-dev].[PBIReportServer].dbo.Users u on u.UserID = c.ModifiedByID",
+              "inner join [kch-sql-bi-dev].[PBIReportServer].dbo.Users usr on usr.UserID = c.CreatedByID",
+              "union ",
+              "select usr.UserName as CreatedBy",
+              ",'ReportServerID' = 1",
+              ",'ReportServerType'='Production'",
+              ",c.CreationDate",
+              ",u.UserName as ModifiedBy",
+              ",CASE C.Type",
+              "\tWHEN 1 then 'Folder'",
+              "    WHEN 13 then 'Report'",
+              "    WHEN 5 then 'DataSourceDefinition'",
+              "    WHEN 8 then 'SharedDataSet'",
+              "    WHEN 6 then 'Report Model'",
+              "\tWHEN 3 THEN 'System Setting'",
+              "    else CAST (Type as varchar)",
+              "   end as RecordType",
+              "--,c.CreatedByID,c.ModifiedByID",
+              ",c.ModifiedDate",
+              ",c.name as ReportName",
+              ",case when c.Hidden = 0 then 'False' else 'True' end as IsHidden",
+              ",c.Path , c.PolicyID ,c.ModifiedByID",
+              ",c.Name from [kch-sql-powerbi].[pbirs].dbo.Catalog c",
+              "inner join ",
+              "[kch-sql-powerbi].[pbirs].dbo.Users u on u.UserID = c.ModifiedByID",
+              "inner join [kch-sql-powerbi].[pbirs].dbo.Users usr on usr.UserID = c.CreatedByID"
+            ]
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "ProdCatalog"
+          },
+          {
+            "name": "QueryEditorSerialization",
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>select usr.UserName as CreatedBy",
+              ",'ReportServerID' = 2",
+              ",'ReportServerType' = 'Development'",
+              ",c.CreationDate",
+              ",u.UserName as ModifiedBy",
+              ",CASE C.Type",
+              "\tWHEN 1 then 'Folder'",
+              "    WHEN 13 then 'Report'",
+              "    WHEN 5 then 'DataSourceDefinition'",
+              "    WHEN 8 then 'SharedDataSet'",
+              "    WHEN 6 then 'Report Model'",
+              "\tWHEN 3 THEN 'System Setting'",
+              "    else CAST (Type as varchar)",
+              "   end as RecordType",
+              "--,c.CreatedByID,c.ModifiedByID",
+              ",c.ModifiedDate",
+              ",c.name as ReportName",
+              ",case when c.Hidden = 0 then 'False' else 'True' end as IsHidden",
+              ",c.Path , c.PolicyID ,c.ModifiedByID",
+              ",c.Name from [kch-sql-bi-dev].[PBIReportServer].dbo.Catalog c",
+              "inner join ",
+              "[kch-sql-bi-dev].[PBIReportServer].dbo.Users u on u.UserID = c.ModifiedByID",
+              "inner join [kch-sql-bi-dev].[PBIReportServer].dbo.Users usr on usr.UserID = c.CreatedByID",
+              "union ",
+              "select usr.UserName as CreatedBy",
+              ",'ReportServerID' = 1",
+              ",'ReportServerType'='Production'",
+              ",c.CreationDate",
+              ",u.UserName as ModifiedBy",
+              ",CASE C.Type",
+              "\tWHEN 1 then 'Folder'",
+              "    WHEN 13 then 'Report'",
+              "    WHEN 5 then 'DataSourceDefinition'",
+              "    WHEN 8 then 'SharedDataSet'",
+              "    WHEN 6 then 'Report Model'",
+              "\tWHEN 3 THEN 'System Setting'",
+              "    else CAST (Type as varchar)",
+              "   end as RecordType",
+              "--,c.CreatedByID,c.ModifiedByID",
+              ",c.ModifiedDate",
+              ",c.name as ReportName",
+              ",case when c.Hidden = 0 then 'False' else 'True' end as IsHidden",
+              ",c.Path , c.PolicyID ,c.ModifiedByID",
+              ",c.Name from [kch-sql-powerbi].[pbirs].dbo.Catalog c",
+              "inner join ",
+              "[kch-sql-powerbi].[pbirs].dbo.Users u on u.UserID = c.ModifiedByID",
+              "inner join [kch-sql-powerbi].[pbirs].dbo.Users usr on usr.UserID = c.CreatedByID</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "ReportCatalog",
+        "columns": [
+          {
+            "name": "ReportServerID",
+            "dataType": "int64",
+            "sourceColumn": "ReportServerID",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "ReportServerName",
+            "dataType": "string",
+            "sourceColumn": "ReportServerName",
+            "sourceProviderType": "WChar",
+            "displayFolder": "ServerName"
+          },
+          {
+            "name": "ReportServerType",
+            "dataType": "string",
+            "sourceColumn": "ReportServerType",
+            "sourceProviderType": "WChar",
+            "displayFolder": "ServerName"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "ReportCatalog",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [LOG].[ReportCatalog].* FROM [LOG].[ReportCatalog] ",
+              "dataSource": "SqlServer kch-sql-bi-01 DataBRef"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [LOG].[ReportCatalog].* FROM [LOG].[ReportCatalog] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "ReportCatalog"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "LOG"
+          }
+        ]
+      },
+      {
+        "name": "ProdPolicies",
+        "columns": [
+          {
+            "name": "PolicyID",
+            "dataType": "string",
+            "sourceColumn": "PolicyID",
+            "sourceProviderType": "VarChar"
+          },
+          {
+            "name": "PolicyFlag",
+            "dataType": "int64",
+            "sourceColumn": "PolicyFlag",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "ReportServerType",
+            "dataType": "string",
+            "sourceColumn": "ReportServerType",
+            "sourceProviderType": "VarChar"
+          },
+          {
+            "name": "ReportServerID",
+            "dataType": "int64",
+            "sourceColumn": "ReportServerID",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "ProdPolicies",
+            "dataView": "full",
+            "source": {
+              "query": [
+                "select s.*",
+                "\t,'ReportServerType' = 'Production'",
+                "\t,'ReportServerID' = 1 ",
+                "\t from dbo.policies s",
+                "\tunion ",
+                "\tselect s.*",
+                "\t, 'ReportServerType' = 'Development'",
+                "\t, 'ReportServerID'= 2",
+                "\t from [kch-sql-bi-dev].[pbireportserver].dbo.policies s"
+              ],
+              "dataSource": "SqlServer kch-sql-powerbi PBIRS"
+            },
+            "annotations": [
+              {
+                "name": "QueryEditorSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>select s.*",
+                  "\t,'ReportServerType' = 'Production'",
+                  "\t,'ReportServerID' = 1 ",
+                  "\t from dbo.policies s",
+                  "\tunion ",
+                  "\tselect s.*",
+                  "\t, 'ReportServerType' = 'Development'",
+                  "\t, 'ReportServerID'= 2",
+                  "\t from [kch-sql-bi-dev].[pbireportserver].dbo.policies s</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": [
+              "select s.*",
+              "\t,'ReportServerType' = 'Production'",
+              "\t,'ReportServerID' = 1 ",
+              "\t from dbo.policies s",
+              "\tunion ",
+              "\tselect s.*",
+              "\t, 'ReportServerType' = 'Development'",
+              "\t, 'ReportServerID'= 2",
+              "\t from [kch-sql-bi-dev].[pbireportserver].dbo.policies s"
+            ]
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "ProdPolicies"
+          },
+          {
+            "name": "QueryEditorSerialization",
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>select s.*",
+              "\t,'ReportServerType' = 'Production'",
+              "\t,'ReportServerID' = 1 ",
+              "\t from dbo.policies s",
+              "\tunion ",
+              "\tselect s.*",
+              "\t, 'ReportServerType' = 'Development'",
+              "\t, 'ReportServerID'= 2",
+              "\t from [kch-sql-bi-dev].[pbireportserver].dbo.policies s</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "ProdReportSecurity",
+        "columns": [
+          {
+            "name": "RoleName",
+            "dataType": "string",
+            "sourceColumn": "RoleName",
+            "sourceProviderType": "VarChar"
+          },
+          {
+            "name": "UserName",
+            "dataType": "string",
+            "sourceColumn": "UserName",
+            "sourceProviderType": "VarChar"
+          },
+          {
+            "name": "ReportServerType",
+            "dataType": "string",
+            "sourceColumn": "ReportServerType",
+            "sourceProviderType": "VarChar"
+          },
+          {
+            "name": "ReportServerID",
+            "dataType": "int64",
+            "sourceColumn": "ReportServerID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Path",
+            "dataType": "string",
+            "sourceColumn": "Path",
+            "sourceProviderType": "VarChar"
+          },
+          {
+            "name": "RecordType",
+            "dataType": "string",
+            "sourceColumn": "RecordType",
+            "sourceProviderType": "VarChar"
+          },
+          {
+            "name": "RoleID",
+            "dataType": "string",
+            "sourceColumn": "RoleID"
+          },
+          {
+            "name": "UserID",
+            "dataType": "string",
+            "sourceColumn": "UserID"
+          },
+          {
+            "type": "calculated",
+            "name": "RoleDescription",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LOOKUPVALUE(ProdRoles[Description],ProdRoles[RoleID],[RoleID])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "ProdReportSecurity",
+            "dataView": "full",
+            "source": {
+              "query": [
+                "SELECT",
+                "    R.RoleName",
+                "\t,R.RoleID",
+                "    ,U.UserName",
+                "\t,U.UserID",
+                "\t,'ReportServerType' = 'Production'",
+                "\t, 'ReportServerID' = 1",
+                "    ,C.Path",
+                "\t,CASE C.Type",
+                "\tWHEN 1 then 'Folder'",
+                "    WHEN 13 then 'Report'",
+                "    WHEN 5 then 'DataSourceDefinition'",
+                "    WHEN 8 then 'SharedDataSet'",
+                "    WHEN 6 then 'Report Model'",
+                "\tWHEN 3 THEN 'System Setting'",
+                "    else CAST (Type as varchar)",
+                "   end as RecordType",
+                " ",
+                "FROM",
+                "    dbo.Catalog C WITH (NOLOCK)    --Parent",
+                "    JOIN",
+                "    dbo.Policies P WITH (NOLOCK) ON C.PolicyID = P.PolicyID",
+                "    JOIN",
+                "    dbo.PolicyUserRole PUR WITH (NOLOCK) ON P.PolicyID = PUR.PolicyID ",
+                "    JOIN",
+                "    dbo.Users U WITH (NOLOCK) ON PUR.UserID = U.UserID ",
+                "    JOIN",
+                "    dbo.Roles R WITH (NOLOCK) ON PUR.RoleID = R.RoleID",
+                "union ",
+                "SELECT",
+                "    R.RoleName",
+                "\t,R.RoleID",
+                "    ,U.UserName",
+                "\t,U.UserID",
+                "\t,'ReportServerType' = 'Development'",
+                "\t, 'ReportServerID' = 2",
+                "    ,C.Path",
+                "\t,CASE C.Type",
+                "\tWHEN 1 then 'Folder'",
+                "    WHEN 13 then 'Report'",
+                "    WHEN 5 then 'DataSourceDefinition'",
+                "    WHEN 8 then 'SharedDataSet'",
+                "    WHEN 6 then 'Report Model'",
+                "\tWHEN 3 THEN 'System Setting'",
+                "    else CAST (Type as varchar)",
+                "   end as RecordType",
+                " ",
+                "FROM",
+                "    [kch-sql-bi-dev].[pbireportserver].dbo.Catalog C WITH (NOLOCK)    --Parent",
+                "    JOIN",
+                "    [kch-sql-bi-dev].[pbireportserver].dbo.Policies P WITH (NOLOCK) ON C.PolicyID = P.PolicyID",
+                "    JOIN",
+                "    [kch-sql-bi-dev].[pbireportserver].dbo.PolicyUserRole PUR WITH (NOLOCK) ON P.PolicyID = PUR.PolicyID ",
+                "    JOIN",
+                "    [kch-sql-bi-dev].[pbireportserver].dbo.Users U WITH (NOLOCK) ON PUR.UserID = U.UserID ",
+                "    JOIN",
+                "    [kch-sql-bi-dev].[pbireportserver].dbo.Roles R WITH (NOLOCK) ON PUR.RoleID = R.RoleID"
+              ],
+              "dataSource": "SqlServer kch-sql-powerbi PBIRS"
+            },
+            "annotations": [
+              {
+                "name": "QueryEditorSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT",
+                  "    R.RoleName",
+                  "\t,R.RoleID",
+                  "    ,U.UserName",
+                  "\t,U.UserID",
+                  "\t,'ReportServerType' = 'Production'",
+                  "\t, 'ReportServerID' = 1",
+                  "    ,C.Path",
+                  "\t,CASE C.Type",
+                  "\tWHEN 1 then 'Folder'",
+                  "    WHEN 13 then 'Report'",
+                  "    WHEN 5 then 'DataSourceDefinition'",
+                  "    WHEN 8 then 'SharedDataSet'",
+                  "    WHEN 6 then 'Report Model'",
+                  "\tWHEN 3 THEN 'System Setting'",
+                  "    else CAST (Type as varchar)",
+                  "   end as RecordType",
+                  " ",
+                  "FROM",
+                  "    dbo.Catalog C WITH (NOLOCK)    --Parent",
+                  "    JOIN",
+                  "    dbo.Policies P WITH (NOLOCK) ON C.PolicyID = P.PolicyID",
+                  "    JOIN",
+                  "    dbo.PolicyUserRole PUR WITH (NOLOCK) ON P.PolicyID = PUR.PolicyID ",
+                  "    JOIN",
+                  "    dbo.Users U WITH (NOLOCK) ON PUR.UserID = U.UserID ",
+                  "    JOIN",
+                  "    dbo.Roles R WITH (NOLOCK) ON PUR.RoleID = R.RoleID",
+                  "union ",
+                  "SELECT",
+                  "    R.RoleName",
+                  "\t,R.RoleID",
+                  "    ,U.UserName",
+                  "\t,U.UserID",
+                  "\t,'ReportServerType' = 'Development'",
+                  "\t, 'ReportServerID' = 2",
+                  "    ,C.Path",
+                  "\t,CASE C.Type",
+                  "\tWHEN 1 then 'Folder'",
+                  "    WHEN 13 then 'Report'",
+                  "    WHEN 5 then 'DataSourceDefinition'",
+                  "    WHEN 8 then 'SharedDataSet'",
+                  "    WHEN 6 then 'Report Model'",
+                  "\tWHEN 3 THEN 'System Setting'",
+                  "    else CAST (Type as varchar)",
+                  "   end as RecordType",
+                  " ",
+                  "FROM",
+                  "    [kch-sql-bi-dev].[pbireportserver].dbo.Catalog C WITH (NOLOCK)    --Parent",
+                  "    JOIN",
+                  "    [kch-sql-bi-dev].[pbireportserver].dbo.Policies P WITH (NOLOCK) ON C.PolicyID = P.PolicyID",
+                  "    JOIN",
+                  "    [kch-sql-bi-dev].[pbireportserver].dbo.PolicyUserRole PUR WITH (NOLOCK) ON P.PolicyID = PUR.PolicyID ",
+                  "    JOIN",
+                  "    [kch-sql-bi-dev].[pbireportserver].dbo.Users U WITH (NOLOCK) ON PUR.UserID = U.UserID ",
+                  "    JOIN",
+                  "    [kch-sql-bi-dev].[pbireportserver].dbo.Roles R WITH (NOLOCK) ON PUR.RoleID = R.RoleID</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": [
+              "SELECT",
+              "    R.RoleName",
+              "\t,R.RoleID",
+              "    ,U.UserName",
+              "\t,U.UserID",
+              "\t,'ReportServerType' = 'Production'",
+              "\t, 'ReportServerID' = 1",
+              "    ,C.Path",
+              "\t,CASE C.Type",
+              "\tWHEN 1 then 'Folder'",
+              "    WHEN 13 then 'Report'",
+              "    WHEN 5 then 'DataSourceDefinition'",
+              "    WHEN 8 then 'SharedDataSet'",
+              "    WHEN 6 then 'Report Model'",
+              "\tWHEN 3 THEN 'System Setting'",
+              "    else CAST (Type as varchar)",
+              "   end as RecordType",
+              " ",
+              "FROM",
+              "    dbo.Catalog C WITH (NOLOCK)    --Parent",
+              "    JOIN",
+              "    dbo.Policies P WITH (NOLOCK) ON C.PolicyID = P.PolicyID",
+              "    JOIN",
+              "    dbo.PolicyUserRole PUR WITH (NOLOCK) ON P.PolicyID = PUR.PolicyID ",
+              "    JOIN",
+              "    dbo.Users U WITH (NOLOCK) ON PUR.UserID = U.UserID ",
+              "    JOIN",
+              "    dbo.Roles R WITH (NOLOCK) ON PUR.RoleID = R.RoleID",
+              "union ",
+              "SELECT",
+              "    R.RoleName",
+              "\t,R.RoleID",
+              "    ,U.UserName",
+              "\t,U.UserID",
+              "\t,'ReportServerType' = 'Development'",
+              "\t, 'ReportServerID' = 2",
+              "    ,C.Path",
+              "\t,CASE C.Type",
+              "\tWHEN 1 then 'Folder'",
+              "    WHEN 13 then 'Report'",
+              "    WHEN 5 then 'DataSourceDefinition'",
+              "    WHEN 8 then 'SharedDataSet'",
+              "    WHEN 6 then 'Report Model'",
+              "\tWHEN 3 THEN 'System Setting'",
+              "    else CAST (Type as varchar)",
+              "   end as RecordType",
+              " ",
+              "FROM",
+              "    [kch-sql-bi-dev].[pbireportserver].dbo.Catalog C WITH (NOLOCK)    --Parent",
+              "    JOIN",
+              "    [kch-sql-bi-dev].[pbireportserver].dbo.Policies P WITH (NOLOCK) ON C.PolicyID = P.PolicyID",
+              "    JOIN",
+              "    [kch-sql-bi-dev].[pbireportserver].dbo.PolicyUserRole PUR WITH (NOLOCK) ON P.PolicyID = PUR.PolicyID ",
+              "    JOIN",
+              "    [kch-sql-bi-dev].[pbireportserver].dbo.Users U WITH (NOLOCK) ON PUR.UserID = U.UserID ",
+              "    JOIN",
+              "    [kch-sql-bi-dev].[pbireportserver].dbo.Roles R WITH (NOLOCK) ON PUR.RoleID = R.RoleID"
+            ]
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "ProdReportSecurity"
+          },
+          {
+            "name": "QueryEditorSerialization",
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT",
+              "    R.RoleName",
+              "\t,R.RoleID",
+              "    ,U.UserName",
+              "\t,U.UserID",
+              "\t,'ReportServerType' = 'Production'",
+              "\t, 'ReportServerID' = 1",
+              "    ,C.Path",
+              "\t,CASE C.Type",
+              "\tWHEN 1 then 'Folder'",
+              "    WHEN 13 then 'Report'",
+              "    WHEN 5 then 'DataSourceDefinition'",
+              "    WHEN 8 then 'SharedDataSet'",
+              "    WHEN 6 then 'Report Model'",
+              "\tWHEN 3 THEN 'System Setting'",
+              "    else CAST (Type as varchar)",
+              "   end as RecordType",
+              " ",
+              "FROM",
+              "    dbo.Catalog C WITH (NOLOCK)    --Parent",
+              "    JOIN",
+              "    dbo.Policies P WITH (NOLOCK) ON C.PolicyID = P.PolicyID",
+              "    JOIN",
+              "    dbo.PolicyUserRole PUR WITH (NOLOCK) ON P.PolicyID = PUR.PolicyID ",
+              "    JOIN",
+              "    dbo.Users U WITH (NOLOCK) ON PUR.UserID = U.UserID ",
+              "    JOIN",
+              "    dbo.Roles R WITH (NOLOCK) ON PUR.RoleID = R.RoleID",
+              "union ",
+              "SELECT",
+              "    R.RoleName",
+              "\t,R.RoleID",
+              "    ,U.UserName",
+              "\t,U.UserID",
+              "\t,'ReportServerType' = 'Development'",
+              "\t, 'ReportServerID' = 2",
+              "    ,C.Path",
+              "\t,CASE C.Type",
+              "\tWHEN 1 then 'Folder'",
+              "    WHEN 13 then 'Report'",
+              "    WHEN 5 then 'DataSourceDefinition'",
+              "    WHEN 8 then 'SharedDataSet'",
+              "    WHEN 6 then 'Report Model'",
+              "\tWHEN 3 THEN 'System Setting'",
+              "    else CAST (Type as varchar)",
+              "   end as RecordType",
+              " ",
+              "FROM",
+              "    [kch-sql-bi-dev].[pbireportserver].dbo.Catalog C WITH (NOLOCK)    --Parent",
+              "    JOIN",
+              "    [kch-sql-bi-dev].[pbireportserver].dbo.Policies P WITH (NOLOCK) ON C.PolicyID = P.PolicyID",
+              "    JOIN",
+              "    [kch-sql-bi-dev].[pbireportserver].dbo.PolicyUserRole PUR WITH (NOLOCK) ON P.PolicyID = PUR.PolicyID ",
+              "    JOIN",
+              "    [kch-sql-bi-dev].[pbireportserver].dbo.Users U WITH (NOLOCK) ON PUR.UserID = U.UserID ",
+              "    JOIN",
+              "    [kch-sql-bi-dev].[pbireportserver].dbo.Roles R WITH (NOLOCK) ON PUR.RoleID = R.RoleID</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+            ]
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "a310160c-efe4-48b2-b55e-1418448d8c55",
+        "fromTable": "D_Column",
+        "fromColumn": "TableID",
+        "toTable": "D_Table",
+        "toColumn": "TableCatID",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "cb6db571-af0a-48a5-9da5-3ed124b78d8b",
+        "fromTable": "D_RoleMembership",
+        "fromColumn": "RoleID",
+        "toTable": "D_Role",
+        "toColumn": "RoleID",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "1dff2b7f-63a0-487a-b40e-90c04b617e9a",
+        "fromTable": "D_TablePermission",
+        "fromColumn": "ROLEID",
+        "toTable": "D_Role",
+        "toColumn": "RoleID",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "927e4bad-2b87-4b7f-b929-857aaa32b71e",
+        "fromTable": "D_Role",
+        "fromColumn": "CatalogID",
+        "toTable": "D_Catalog",
+        "toColumn": "CatalogID",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "b79a68c0-c317-46b7-92ab-f0d8f576e5c9",
+        "fromTable": "D_Relationship",
+        "fromColumn": "ToTableID",
+        "toTable": "D_ToTable",
+        "toColumn": "ToTableCatID",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "dbfde51f-9723-4ba8-8379-ff98be1c0468",
+        "fromTable": "D_Relationship",
+        "fromColumn": "ToColumnID",
+        "toTable": "D_ToColumn",
+        "toColumn": "ToColumnID",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "3fb86966-9977-4039-8e91-fe61aee361f6",
+        "fromTable": "D_Relationship",
+        "fromColumn": "FromTableID",
+        "toTable": "D_Table",
+        "toColumn": "TableCatID",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "c857ae67-861c-4c39-9972-dea874803574",
+        "fromTable": "D_Relationship",
+        "fromColumn": "FromColumnID",
+        "toTable": "D_Column",
+        "toColumn": "ColumnID",
+        "isActive": false,
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "28940d2d-2a82-44bc-a46e-da9b8eb3b694",
+        "fromTable": "D_TableSource",
+        "fromColumn": "TableID",
+        "toTable": "D_Table",
+        "toColumn": "TableCatID",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "547cc3cc-609f-4a9b-88cf-0fde416f0bcf",
+        "fromTable": "D_Table",
+        "fromColumn": "CatalogID",
+        "toTable": "D_Catalog",
+        "toColumn": "CatalogID",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "69b8308e-b74e-4f98-906d-3003f8767334",
+        "fromTable": "D_Measure",
+        "fromColumn": "TableID",
+        "toTable": "D_Table",
+        "toColumn": "TableCatID"
+      },
+      {
+        "name": "8d1eef6a-ab32-494a-a22e-5496669e8040",
+        "fromTable": "ProdPolicyUserRole",
+        "fromColumn": "RoleID",
+        "toTable": "ProdRoles",
+        "toColumn": "RoleID"
+      },
+      {
+        "name": "3d3297d8-dd4a-4c3d-b1cd-4d9a5caa0254",
+        "fromTable": "ProdCatalog",
+        "fromColumn": "ReportServerID",
+        "toTable": "ReportCatalog",
+        "toColumn": "ReportServerID",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "11c5aef7-9c54-46df-83bf-9a103acd61bb",
+        "fromTable": "D_Hierarchy",
+        "fromColumn": "TableCatID",
+        "toTable": "D_Table",
+        "toColumn": "TableCatID",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "6cf27c14-d179-4cbd-a820-d15581f4f5ee",
+        "fromTable": "ProdCatalog",
+        "fromColumn": "PolicyID",
+        "toTable": "ProdPolicies",
+        "toColumn": "PolicyID",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "039e4e4e-50e8-4ba0-86fd-ccd49a42fd20",
+        "fromTable": "ProdPolicyUserRole",
+        "fromColumn": "PolicyID",
+        "toTable": "ProdPolicies",
+        "toColumn": "PolicyID"
+      },
+      {
+        "name": "f86c2f95-303b-4a60-a912-40adf02570bc",
+        "fromTable": "ProdPolicyUserRole",
+        "fromColumn": "UserID",
+        "toTable": "ProdUsers",
+        "toColumn": "UserID",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "fa0abb76-5138-4bee-bde3-1de6e3561da0",
+        "fromTable": "ProdReportSecurity",
+        "fromColumn": "ReportServerID",
+        "toTable": "ReportCatalog",
+        "toColumn": "ReportServerID"
+      },
+      {
+        "name": "79f516da-f437-4059-8538-3d5994e0160e",
+        "fromTable": "ProdReportSecurity",
+        "fromColumn": "UserID",
+        "toTable": "ProdUsers",
+        "toColumn": "UserID",
+        "isActive": false
+      },
+      {
+        "name": "e6a85a69-9a49-4d55-bcfa-42dd1ec955df",
+        "fromTable": "ProdReportSecurity",
+        "fromColumn": "RoleID",
+        "toTable": "ProdRoles",
+        "toColumn": "RoleID"
+      }
+    ],
+    "roles": [
+      {
+        "name": "Reader",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "XFAB\\GLOBAL_REPORTING",
+            "memberId": "S-1-5-21-3473900696-4126952169-29337163-24679"
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
