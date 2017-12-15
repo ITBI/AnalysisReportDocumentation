@@ -1000,6 +1000,12 @@
             ]
           }
         ],
+        "measures": [
+          {
+            "name": "SUM",
+            "expression": " sum([ColumnStorageID])"
+          }
+        ],
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
