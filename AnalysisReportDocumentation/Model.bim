@@ -36,6 +36,17 @@
             "value": "SqlServer"
           }
         ]
+      },
+      {
+        "name": "SqlServer KCH-SQL-BI-01 ODs",
+        "connectionString": "Provider=SQLNCLI11;Data Source=KCH-SQL-BI-01;Initial Catalog=ODs;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateServiceAccount",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
       }
     ],
     "tables": [
@@ -1004,6 +1015,10 @@
           {
             "name": "SUM",
             "expression": " sum([ColumnStorageID])"
+          },
+          {
+            "name": "Count Column",
+            "expression": "COUNT([ExplicitName])"
           }
         ],
         "annotations": [
@@ -3285,6 +3300,153 @@
             ]
           }
         ]
+      },
+      {
+        "name": "D_ALARM_DESCRIPTION",
+        "columns": [
+          {
+            "name": "ADKEY",
+            "dataType": "int64",
+            "sourceColumn": "ADKEY",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "FORMULA",
+            "dataType": "string",
+            "sourceColumn": "FORMULA",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ALARM_DESCRIPTION",
+            "dataType": "string",
+            "sourceColumn": "ALARM_DESCRIPTION",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_ALARM_DESCRIPTION",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [ODS].[D_ALARM_DESCRIPTION].* FROM [ODS].[D_ALARM_DESCRIPTION] ",
+              "dataSource": "SqlServer KCH-SQL-BI-01 ODs"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [ODS].[D_ALARM_DESCRIPTION].* FROM [ODS].[D_ALARM_DESCRIPTION] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "D_ALARM_DESCRIPTION"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "ODS"
+          }
+        ]
+      },
+      {
+        "name": "D_MFG_CHAMBER",
+        "columns": [
+          {
+            "name": "fk_chamber",
+            "dataType": "int64",
+            "sourceColumn": "fk_chamber",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "chamber",
+            "dataType": "string",
+            "sourceColumn": "chamber",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_MFG_CHAMBER",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [ODS].[D_MFG_CHAMBER].* FROM [ODS].[D_MFG_CHAMBER] ",
+              "dataSource": "SqlServer KCH-SQL-BI-01 ODs"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [ODS].[D_MFG_CHAMBER].* FROM [ODS].[D_MFG_CHAMBER] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "D_MFG_CHAMBER"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "ODS"
+          }
+        ]
+      },
+      {
+        "name": "D_MFG_SUB_STATE",
+        "columns": [
+          {
+            "name": "FK_STATES",
+            "dataType": "int64",
+            "sourceColumn": "FK_STATES",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "MAIN_STATE",
+            "dataType": "string",
+            "sourceColumn": "MAIN_STATE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "SUB_STATES",
+            "dataType": "string",
+            "sourceColumn": "SUB_STATES",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "UEFF_STATE",
+            "dataType": "string",
+            "sourceColumn": "UEFF_STATE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "MA_PRIORITY",
+            "dataType": "int64",
+            "sourceColumn": "MA_PRIORITY",
+            "sourceProviderType": "UnsignedTinyInt"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "D_MFG_SUB_STATE",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [ODS].[D_MFG_SUB_STATE].* FROM [ODS].[D_MFG_SUB_STATE] ",
+              "dataSource": "SqlServer KCH-SQL-BI-01 ODs"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [ODS].[D_MFG_SUB_STATE].* FROM [ODS].[D_MFG_SUB_STATE] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "D_MFG_SUB_STATE"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "ODS"
+          }
+        ]
       }
     ],
     "relationships": [
@@ -3453,6 +3615,10 @@
           {
             "memberName": "XFAB\\GLOBAL_REPORTING",
             "memberId": "S-1-5-21-3473900696-4126952169-29337163-24679"
+          },
+          {
+            "memberName": "XFAB\\KCH-Customer-Service-Group",
+            "memberId": "S-1-5-21-3473900696-4126952169-29337163-3734"
           }
         ]
       }
